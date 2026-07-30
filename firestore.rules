@@ -1,0 +1,77 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSharedReviewer() {
+      return request.auth != null &&
+        request.auth.token.email == 'catenax-review@gate.local';
+    }
+
+    match /leads/{leadId} {
+      allow create: if
+        request.resource.data.keys().hasAll([
+          'fullName',
+          'company',
+          'email',
+          'phone',
+          'jobTitle',
+          'employees',
+          'annualRevenue',
+          'focusArea',
+          'notes',
+          'consent',
+          'source',
+          'status',
+          'createdAt'
+        ]) &&
+        request.resource.data.keys().hasOnly([
+          'fullName',
+          'company',
+          'email',
+          'phone',
+          'jobTitle',
+          'employees',
+          'annualRevenue',
+          'focusArea',
+          'notes',
+          'consent',
+          'source',
+          'status',
+          'createdAt'
+        ]) &&
+        request.resource.data.fullName is string &&
+        request.resource.data.fullName.size() >= 2 &&
+        request.resource.data.fullName.size() <= 100 &&
+        request.resource.data.company is string &&
+        request.resource.data.company.size() >= 2 &&
+        request.resource.data.company.size() <= 120 &&
+        request.resource.data.email is string &&
+        request.resource.data.email.size() <= 160 &&
+        request.resource.data.email.matches('^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$') &&
+        request.resource.data.phone is string &&
+        request.resource.data.phone.size() <= 40 &&
+        request.resource.data.jobTitle is string &&
+        request.resource.data.jobTitle.size() <= 100 &&
+        request.resource.data.employees in ['1-10', '11-49', '50-247', '248+'] &&
+        request.resource.data.annualRevenue in ['under-500k', '500k-10m', '10m-50m', 'over-50m'] &&
+        request.resource.data.focusArea in [
+          'traceability',
+          'quality',
+          'sustainability',
+          'dpp',
+          'supply-chain',
+          'partner-exchange',
+          'not-sure'
+        ] &&
+        request.resource.data.notes is string &&
+        request.resource.data.notes.size() <= 1500 &&
+        request.resource.data.consent == true &&
+        request.resource.data.source == 'automotive-cluster-newsletter' &&
+        request.resource.data.status == 'new' &&
+        request.resource.data.createdAt == request.time;
+
+      allow read: if isSharedReviewer();
+      allow update, delete: if false;
+    }
+  }
+}
