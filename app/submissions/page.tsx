@@ -20,6 +20,8 @@ import {
 import { auth, db, isFirebaseConfigured } from "../../lib/firebase";
 
 const REVIEWER_EMAIL = "catenax-review@gate.local";
+const siteBasePath = process.env.NEXT_PUBLIC_SITE_BASE_PATH ?? "";
+const gateLogo = `${siteBasePath}/gate-logo.png`;
 
 type Lead = {
   id: string;
@@ -214,7 +216,7 @@ export default function SubmissionsPage() {
     return (
       <main className="admin-login">
         <Link className="admin-brand" href="/">
-          <Image src="/gate-logo.png" alt="GATE Institute" width={400} height={140} priority />
+          <Image src={gateLogo} alt="GATE Institute" width={400} height={140} priority />
           <span />
           <strong>CATENA—X</strong>
         </Link>
@@ -262,7 +264,7 @@ export default function SubmissionsPage() {
     <main className="admin-dashboard">
       <header className="admin-header">
         <Link className="admin-brand" href="/">
-          <Image src="/gate-logo.png" alt="GATE Institute" width={400} height={140} />
+          <Image src={gateLogo} alt="GATE Institute" width={400} height={140} />
           <span />
           <strong>CATENA—X</strong>
         </Link>

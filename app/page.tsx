@@ -3,7 +3,11 @@
 import { FormEvent, useEffect, useMemo, useState } from "react";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import Image from "next/image";
+import Link from "next/link";
 import { db, isFirebaseConfigured } from "../lib/firebase";
+
+const siteBasePath = process.env.NEXT_PUBLIC_SITE_BASE_PATH ?? "";
+const assetPath = (path: string) => `${siteBasePath}${path}`;
 
 const workPackages = [
   {
@@ -164,7 +168,7 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="GATE Catena-X Readiness home">
-          <Image src="/gate-logo.png" alt="GATE Institute" width={400} height={140} priority />
+          <Image src={assetPath("/gate-logo.png")} alt="GATE Institute" width={400} height={140} priority />
           <span className="brand-divider" />
           <span className="catena-wordmark">CATENA—X</span>
         </a>
@@ -346,7 +350,7 @@ export default function Home() {
           </a>
         </div>
         <div className="programme-card innovation" data-reveal>
-          <Image src="/innovationamp-logo.png" alt="InnovationAmp" width={400} height={120} />
+          <Image src={assetPath("/innovationamp-logo.png")} alt="InnovationAmp" width={400} height={120} />
           <div className="programme-kicker">European Digital Innovation Hub</div>
           <h2>Test before you invest.</h2>
           <p>
@@ -368,7 +372,7 @@ export default function Home() {
 
       <section className="section gate-section" id="gate">
         <div className="gate-mark" data-reveal>
-          <Image src="/gate-logo.png" alt="GATE — Big Data for Smart Society" width={400} height={140} />
+          <Image src={assetPath("/gate-logo.png")} alt="GATE — Big Data for Smart Society" width={400} height={140} />
           <span>Sofia University “St. Kliment Ohridski”</span>
         </div>
         <div className="gate-copy" data-reveal>
@@ -515,17 +519,17 @@ export default function Home() {
 
       <footer>
         <div className="footer-logos">
-          <Image src="/gate-logo.png" alt="GATE Institute" width={400} height={140} />
-          <Image src="/innovationamp-logo.png" alt="InnovationAmp" width={400} height={120} />
-          <Image src="/smart-growth-program.png" alt="Science and Education for Smart Growth Operational Programme" width={500} height={150} />
-          <Image src="/eu-funded.png" alt="Funded by the European Union" width={500} height={100} />
+          <Image src={assetPath("/gate-logo.png")} alt="GATE Institute" width={400} height={140} />
+          <Image src={assetPath("/innovationamp-logo.png")} alt="InnovationAmp" width={400} height={120} />
+          <Image src={assetPath("/smart-growth-program.png")} alt="Science and Education for Smart Growth Operational Programme" width={500} height={150} />
+          <Image src={assetPath("/eu-funded.png")} alt="Funded by the European Union" width={500} height={100} />
         </div>
         <div className="footer-copy">
           <p>Catena-X Readiness Service for Bulgarian automotive companies.</p>
           <span>© {new Date().getFullYear()} GATE Institute</span>
         </div>
         <div className="footer-links">
-          <a href="/submissions">Review submissions</a>
+          <Link href="/submissions">Review submissions</Link>
           <a href="https://catena-x.net/" target="_blank" rel="noreferrer">Catena-X</a>
           <a href="https://data-space-accelerator.com/" target="_blank" rel="noreferrer">Data Space Accelerator</a>
           <a href="https://www.gate-ai.eu/en/home/" target="_blank" rel="noreferrer">GATE</a>

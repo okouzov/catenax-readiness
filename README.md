@@ -105,14 +105,26 @@ Official references:
 - [Firestore authenticated security rules](https://firebase.google.com/docs/firestore/security/rules-conditions)
 - [Firebase Spark plan](https://firebase.google.com/docs/projects/billing/firebase-pricing-plans)
 
-## Publishing from GitHub
+## Publishing with GitHub Pages
 
-Push the repository to GitHub and connect it to a compatible host such as
-Cloudflare, Vercel or Firebase App Hosting. Add the six
-`NEXT_PUBLIC_FIREBASE_*` values from `.env.example` as deployment environment
-variables.
+The repository includes a GitHub Actions workflow that builds a static export
+for `https://okouzov.github.io/catenax-readiness/`.
 
-Do not commit `.env.local`; it is intentionally ignored.
+1. In the GitHub repository, open **Settings → Secrets and variables → Actions
+   → Variables**.
+2. Add the six `NEXT_PUBLIC_FIREBASE_*` values listed in `.env.example` as
+   repository variables.
+3. Open **Settings → Pages** and select **GitHub Actions** as the source.
+4. Push to `main`, then follow the deployment in the **Actions** tab.
+
+The workflow builds and publishes the `out` directory automatically. Do not
+select `Deploy from a branch`: that mode publishes this README instead of
+building the application.
+
+Do not commit `.env.local`; it is intentionally ignored. Firebase Web App
+configuration is included in the browser bundle by design, while access to
+stored submissions is enforced by the included Firestore rules and Firebase
+Authentication.
 
 ## Content sources
 

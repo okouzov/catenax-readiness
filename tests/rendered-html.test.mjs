@@ -36,7 +36,7 @@ test("server-renders the complete readiness landing page", async () => {
   assert.match(html, /Six work packages\. One usable outcome\./i);
   assert.match(html, /Expression of interest/i);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/i);
-  assert.match(html, /https:\/\/readiness\.example\/og\.png/i);
+  assert.match(html, /https:\/\/www\.gate-ai\.eu\/og\.png/i);
 });
 
 test("keeps every proposal work package and a secured Firebase handoff", async () => {
