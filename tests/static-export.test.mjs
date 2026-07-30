@@ -15,6 +15,7 @@ test("exports both GitHub Pages routes with the repository base path", async () 
   assert.match(landing, /\/catenax-readiness\/gate-logo-transparent\.png/);
   assert.match(landing, /\/catenax-readiness\/catena-x-transparent\.png/);
   assert.match(landing, /\/catenax-readiness\/submissions/);
+  assert.match(landing, /https:\/\/www\.gate-ai\.eu\/en\/privacy-policy\//);
   assert.match(
     landing,
     /https:\/\/okouzov\.github\.io\/catenax-readiness\/og\.png/,

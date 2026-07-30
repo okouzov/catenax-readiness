@@ -523,7 +523,7 @@ export default function Home() {
             <input name="consent" type="checkbox" required />
             <span>
               I consent to GATE using these details to contact me about this opportunity. See GATE’s{" "}
-              <a href="https://www.gate-ai.eu/en/privacy-terms-and-conditions/" target="_blank" rel="noreferrer">privacy terms</a>.
+              <a href="https://www.gate-ai.eu/en/privacy-policy/" target="_blank" rel="noopener noreferrer">privacy policy</a>.
             </span>
           </label>
           <button className="submit-button" type="submit" disabled={submitting}>

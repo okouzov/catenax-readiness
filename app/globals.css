@@ -722,6 +722,8 @@ nav a:hover {
 }
 
 .programme-card {
+  display: flex;
+  flex-direction: column;
   min-height: 580px;
   padding: 55px;
   position: relative;
@@ -760,12 +762,12 @@ nav a:hover {
 }
 
 .programme-card > a {
-  bottom: 45px;
+  align-self: flex-start;
   border-bottom: 1px solid currentColor;
   font-size: 15px;
   font-weight: 700;
+  margin-top: auto;
   padding-bottom: 5px;
-  position: absolute;
 }
 
 .programme-stat {
