@@ -12,7 +12,8 @@ test("exports both GitHub Pages routes with the repository base path", async () 
 
   assert.match(landing, /Your route into Europe/i);
   assert.match(landing, /\/catenax-readiness\/_next\//);
-  assert.match(landing, /\/catenax-readiness\/gate-logo\.png/);
+  assert.match(landing, /\/catenax-readiness\/gate-official-linkedin\.jpg/);
+  assert.match(landing, /\/catenax-readiness\/catena-x-official\.jpg/);
   assert.match(landing, /\/catenax-readiness\/submissions/);
   assert.match(
     landing,
@@ -20,6 +21,7 @@ test("exports both GitHub Pages routes with the repository base path", async () 
   );
 
   assert.match(submissions, /Review submitted interest/i);
-  assert.match(submissions, /\/catenax-readiness\/gate-logo\.png/);
+  assert.match(submissions, /\/catenax-readiness\/gate-official-linkedin\.jpg/);
+  assert.match(submissions, /\/catenax-readiness\/catena-x-official\.jpg/);
   assert.match(submissions, /\/catenax-readiness\/_next\//);
 });

@@ -21,7 +21,8 @@ import { auth, db, isFirebaseConfigured } from "../../lib/firebase";
 
 const REVIEWER_EMAIL = "catenax-review@gate.local";
 const siteBasePath = process.env.NEXT_PUBLIC_SITE_BASE_PATH ?? "";
-const gateLogo = `${siteBasePath}/gate-logo.png`;
+const gateLogo = `${siteBasePath}/gate-official-linkedin.jpg`;
+const catenaLogo = `${siteBasePath}/catena-x-official.jpg`;
 
 type Lead = {
   id: string;
@@ -216,9 +217,13 @@ export default function SubmissionsPage() {
     return (
       <main className="admin-login">
         <Link className="admin-brand" href="/">
-          <Image src={gateLogo} alt="GATE Institute" width={400} height={140} priority />
-          <span />
-          <strong>CATENA—X</strong>
+          <span className="admin-logo admin-logo-gate">
+            <Image src={gateLogo} alt="GATE Institute" width={200} height={200} priority />
+          </span>
+          <span className="admin-brand-divider" />
+          <span className="admin-logo admin-logo-catena">
+            <Image src={catenaLogo} alt="Catena-X Automotive Network" width={500} height={330} priority />
+          </span>
         </Link>
         <section className="login-panel">
           <div className="login-visual" aria-hidden="true">
@@ -264,9 +269,13 @@ export default function SubmissionsPage() {
     <main className="admin-dashboard">
       <header className="admin-header">
         <Link className="admin-brand" href="/">
-          <Image src={gateLogo} alt="GATE Institute" width={400} height={140} />
-          <span />
-          <strong>CATENA—X</strong>
+          <span className="admin-logo admin-logo-gate">
+            <Image src={gateLogo} alt="GATE Institute" width={200} height={200} />
+          </span>
+          <span className="admin-brand-divider" />
+          <span className="admin-logo admin-logo-catena">
+            <Image src={catenaLogo} alt="Catena-X Automotive Network" width={500} height={330} />
+          </span>
         </Link>
         <button type="button" onClick={handleSignOut}>Sign out</button>
       </header>

@@ -168,9 +168,25 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="GATE Catena-X Readiness home">
-          <Image src={assetPath("/gate-logo.png")} alt="GATE Institute" width={400} height={140} priority />
+          <span className="brand-logo brand-logo-gate">
+            <Image
+              src={assetPath("/gate-official-linkedin.jpg")}
+              alt="GATE Institute"
+              width={200}
+              height={200}
+              priority
+            />
+          </span>
           <span className="brand-divider" />
-          <span className="catena-wordmark">CATENA—X</span>
+          <span className="brand-logo brand-logo-catena">
+            <Image
+              src={assetPath("/catena-x-official.jpg")}
+              alt="Catena-X Automotive Network"
+              width={500}
+              height={330}
+              priority
+            />
+          </span>
         </a>
         <button
           className="menu-toggle"
@@ -372,7 +388,12 @@ export default function Home() {
 
       <section className="section gate-section" id="gate">
         <div className="gate-mark" data-reveal>
-          <Image src={assetPath("/gate-logo.png")} alt="GATE — Big Data for Smart Society" width={400} height={140} />
+          <Image
+            src={assetPath("/gate-official-linkedin.jpg")}
+            alt="GATE Institute"
+            width={200}
+            height={200}
+          />
           <span>Sofia University “St. Kliment Ohridski”</span>
         </div>
         <div className="gate-copy" data-reveal>
@@ -519,7 +540,8 @@ export default function Home() {
 
       <footer>
         <div className="footer-logos">
-          <Image src={assetPath("/gate-logo.png")} alt="GATE Institute" width={400} height={140} />
+          <Image src={assetPath("/gate-official-linkedin.jpg")} alt="GATE Institute" width={200} height={200} />
+          <Image src={assetPath("/catena-x-official.jpg")} alt="Catena-X Automotive Network" width={500} height={330} />
           <Image src={assetPath("/innovationamp-logo.png")} alt="InnovationAmp" width={400} height={120} />
           <Image src={assetPath("/smart-growth-program.png")} alt="Science and Education for Smart Growth Operational Programme" width={500} height={150} />
           <Image src={assetPath("/eu-funded.png")} alt="Funded by the European Union" width={500} height={100} />
