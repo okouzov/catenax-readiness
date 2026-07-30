@@ -22,7 +22,7 @@ test("exports both GitHub Pages routes with the repository base path", async () 
   );
 
   assert.match(submissions, /Review submitted interest/i);
-  assert.match(submissions, /\/catenax-readiness\/gate-logo-transparent\.png/);
-  assert.match(submissions, /\/catenax-readiness\/catena-x-transparent\.png/);
+  assert.match(submissions, /\/catenax-readiness\/gate-logo-white-transparent\.png/);
+  assert.match(submissions, /\/catenax-readiness\/catena-x-logo-white-transparent\.png/);
   assert.match(submissions, /\/catenax-readiness\/_next\//);
 });

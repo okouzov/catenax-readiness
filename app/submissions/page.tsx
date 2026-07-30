@@ -21,8 +21,8 @@ import { auth, db, isFirebaseConfigured } from "../../lib/firebase";
 
 const REVIEWER_EMAIL = "catenax-review@gate.local";
 const siteBasePath = process.env.NEXT_PUBLIC_SITE_BASE_PATH ?? "";
-const gateLogo = `${siteBasePath}/gate-logo-transparent.png`;
-const catenaLogo = `${siteBasePath}/catena-x-transparent.png`;
+const gateLogo = `${siteBasePath}/gate-logo-white-transparent.png`;
+const catenaLogo = `${siteBasePath}/catena-x-logo-white-transparent.png`;
 
 type Lead = {
   id: string;
