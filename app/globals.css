@@ -70,31 +70,25 @@ a {
 }
 
 .brand-logo {
-  background: white;
   display: block;
-  height: 50px;
+  height: 54px;
   overflow: hidden;
   position: relative;
 }
 
 .brand-logo img {
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   width: 100%;
 }
 
 .brand-logo-gate {
-  width: 142px;
-}
-
-.brand-logo-gate img,
-.admin-logo-gate img {
-  object-position: center 62%;
+  width: 104px;
 }
 
 .brand-logo-catena {
-  width: 190px;
+  width: 215px;
 }
 
 .brand-divider {
@@ -829,10 +823,9 @@ nav a:hover {
 }
 
 .gate-mark img {
-  height: 220px;
-  mix-blend-mode: multiply;
-  object-fit: cover;
-  object-position: center 62%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
   width: min(100%, 520px);
 }
 
@@ -1133,17 +1126,18 @@ footer {
 }
 
 .footer-logos img {
-  background: white;
   height: 48px;
   max-width: 180px;
   object-fit: contain;
 }
 
-.footer-logos img:nth-child(1),
+.footer-logos img:nth-child(1) {
+  width: 96px;
+}
+
 .footer-logos img:nth-child(2) {
-  object-fit: cover;
-  object-position: center;
-  width: 175px;
+  max-width: 210px;
+  width: 210px;
 }
 
 .footer-copy {
@@ -1210,26 +1204,25 @@ footer {
 }
 
 .admin-logo {
-  background: white;
   display: block;
-  height: 50px;
+  height: 54px;
   overflow: hidden;
   position: relative;
 }
 
 .admin-logo img {
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   width: 100%;
 }
 
 .admin-logo-gate {
-  width: 142px;
+  width: 104px;
 }
 
 .admin-logo-catena {
-  width: 190px;
+  width: 215px;
 }
 
 .admin-brand-divider {
@@ -1752,11 +1745,11 @@ footer {
   }
 
   .brand-logo-gate {
-    width: 105px;
+    width: 74px;
   }
 
   .brand-logo-catena {
-    width: 126px;
+    width: 148px;
   }
 
   .brand-divider {
@@ -1997,11 +1990,11 @@ footer {
   }
 
   .admin-logo-gate {
-    width: 105px;
+    width: 74px;
   }
 
   .admin-logo-catena {
-    width: 126px;
+    width: 148px;
   }
 
   .admin-hero {

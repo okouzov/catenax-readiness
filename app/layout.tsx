@@ -18,7 +18,7 @@ const siteOrigin = siteBasePath
   : "https://www.gate-ai.eu";
 const siteUrl = `${siteOrigin}${siteBasePath}/`;
 const socialImage = `${siteOrigin}${siteBasePath}/og.png`;
-const gateIcon = `${siteBasePath}/gate-official-linkedin.jpg`;
+const gateIcon = `${siteBasePath}/gate-logo-transparent.png`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
